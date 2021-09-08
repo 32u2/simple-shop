@@ -46,6 +46,8 @@ Decision: use single Products controller rather than controller/view pairs, the 
 - [x] create product/manage view + guarded route
 - [x] create product/create view + guarded route
 - [x] create product/update view + guarded route
+- [ ] create product migration, update model and perhaps create faker too
+
 
 
 
