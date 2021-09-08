@@ -71,7 +71,7 @@
         </div>
 
         <div class="ml-12">
-            <div class="mt-2 text-sm text-gray-500">
+            <div class="mt-2 pb-6 text-sm text-gray-500">
                 Current options were to use legacy laravel/ui package which provides Bootstrap and rudimentary authorization, or to use Breeze or Jetstream which both offer Fortify auth flow, but with Tailwind instead of Bootstrap.
 
             </div>
