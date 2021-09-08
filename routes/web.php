@@ -25,9 +25,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::group(['middleware' => ['auth:sanctum', 'verified',]], function () {
 
-    Route::get('/product/create', \App\Http\Livewire\User\ProductsController::class, 'create')->name('create-product');
-    Route::get('/product/update/{id}', \App\Http\Livewire\User\ProductsController::class, 'update')->name('update-product');
-    Route::get('/product/delete/{id}', \App\Http\Livewire\User\ProductsController::class, 'destroy')->name('delete-product');
+    Route::get('/product/create', ProductsController::class, 'create')->name('create-product');
+    Route::get('/product/update/{id}', ProductsController::class, 'edit')->name('update-product');
+    Route::get('/product/delete/{id}', ProductsController::class, 'destroy')->name('delete-product');
 
 });
 
