@@ -19,3 +19,18 @@ git checkout -b starter
 git push origin starter
 git checkout main
 ```
+
+# Decisions...
+ 
+If there was an explicit requirement to use bootstrap.css, the simple solution would have been to use [larafort](https://github.com/32u2/larafort) starter. Switching from Tailwind to Bootstrap can even be done later in the project. As of now, the css markup for the following views would need to be changed:
+
+- resources/views/layouts/app.blade.php
+- resources/views/home.blade.php
+- resources/views/auth/login.blade.php
+- resources/views/auth/register.blade.php
+- resources/views/auth/forgot-password.blade.php
+- resources/views/auth/reset-password.blade.php
+- resources/views/auth/verify-email.blade.php
+
+All these 'replacement' views are available [here](https://github.com/32u2/larafort/tree/main/resources/views/auth).
+
