@@ -34,11 +34,15 @@ If there was an explicit requirement to use bootstrap.css, the simple solution w
 
 All these 'replacement' views are available [here](https://github.com/32u2/larafort/tree/main/resources/views/auth).
 
-# Way forward
+# ToDo
 
+- [ ] copy local **.env** file to NOTES folder (it will later contain STRIPE sandbox creds)
+- [ ] create Products and SingleProduct views
 - [x] create Product model
 - [x] create ProductsController
-- [ ] create Products and SingleProduct views
+
+
+
 
 
 
