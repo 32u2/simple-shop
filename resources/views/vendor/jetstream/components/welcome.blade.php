@@ -1,5 +1,5 @@
 <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
-    <div>
+    <div class="mt-2">
         <x-jet-application-logo class="block h-12 w-auto" />
     </div>
 
@@ -86,7 +86,7 @@
 
         <div class="ml-12">
             <div class="mt-2 text-sm text-gray-500">
-                Authentication and registration is handled by Fortify and it supports for user email verification and resetting forgotten passwords.
+                Authentication and registration is handled by Fortify with the advantage of catering for both Laravel auth as per the brief, or for "headless" (jwt) auth fit for the mobile app, SPA, or exposed API.
             </div>
         </div>
     </div>
