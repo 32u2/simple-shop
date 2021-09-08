@@ -34,13 +34,14 @@ If there was an explicit requirement to use bootstrap.css, the simple solution w
 
 All these 'replacement' views are available [here](https://github.com/32u2/larafort/tree/main/resources/views/auth).
 
-# ToDo
+# ToDo + on-the-fly decisions
 
-- [ ] copy local **.env** file to NOTES folder (it will later contain STRIPE sandbox creds)
-- [ ] create Products and SingleProduct views
+- [x] copy local **.env** file to NOTES folder (it will later contain STRIPE sandbox creds)
 - [x] create Product model
 - [x] create ProductsController
+- [x] create Products and SingleProduct views + corresponding routes
 
+Decision: use single Products controller rather than controller/view pairs, the auth is handled by route guard and layout, so there won't be confusion as to who can access what.
 
 
 
