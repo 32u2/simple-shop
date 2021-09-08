@@ -58,7 +58,7 @@ so there won't be any confusion as to who can access what.
 - [x] create dashboard landing page
 - [x] create product/manage page (dashboard)
 
-![Dashboard Landing Page](https://github.com/32u2/simple-shop/blob/main/NOTES/dash-landing.jpg)
+![Dashboard Landing Page](https://github.com/32u2/simple-shop/blob/main/NOTES/dash-landing.png)
 
 
 
