@@ -15,7 +15,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+        return view('product.cards', [
+            'products' => 'all products here..',
+        ]);
     }
 
     /**
@@ -45,9 +47,11 @@ class ProductsController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        return view('product.single', [
+            'product' => 'single product here..',
+        ]);
     }
 
     /**
@@ -58,7 +62,7 @@ class ProductsController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+
     }
 
     /**
