@@ -14,10 +14,10 @@ use App\Http\Controllers\ProductsController;
 |
 */
 
-// Route::get('/', function () {return view('welcome');});
+Route::get('/home', function () {return view('welcome');});
 
 Route::get('/', [ProductsController::class, 'index'])->name('landing'); // landing page - straight to business
-Route::get('/products/{id}', [ProductsController::class, 'show'])->name('single-product'); // maybe sluggify this for SEO, rather than just having id?
+Route::get('/product/{id}', [ProductsController::class, 'show'])->name('single-product'); // maybe sluggify this for SEO, rather than just having id?
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -25,9 +25,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::group(['middleware' => ['auth:sanctum', 'verified',]], function () {
 
-    // Route::get('/product/create', ProductsController::class, 'create')->name('create-product');
-    // Route::get('/product/update/{id}', ProductsController::class, 'edit')->name('update-product');
-    // Route::get('/product/delete/{id}', ProductsController::class, 'destroy')->name('delete-product');
+    Route::get('/products', [ProductsController::class, 'showTable'])->name('products');
+    Route::get('/product/create', [ProductsController::class, 'create'])->name('create-product');
+    Route::get('/product/update/{id}', [ProductsController::class, 'edit'])->name('update-product');
+    Route::get('/product/delete/{id}', [ProductsController::class, 'destroy'])->name('delete-product');
 
 });
 

@@ -21,6 +21,18 @@ class ProductsController extends Controller
     }
 
     /**
+     * Display products table - AUTH required.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showTable()
+    {
+        return view('product.manage', [
+            'products' => 'all products in the table here..',
+        ]);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -50,7 +62,7 @@ class ProductsController extends Controller
     public function show($id)
     {
         return view('product.single', [
-            'product' => 'single product here..',
+            'product' => 'single product here... (' . $id . ')',
         ]);
     }
 

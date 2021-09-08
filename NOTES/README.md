@@ -53,9 +53,12 @@ so there won't be any confusion as to who can access what.
 - [x] create product/manage view + guarded route
 - [x] create product/create view + guarded route
 - [x] create product/update view + guarded route
-- [ ] create product migration, update model and perhaps create faker too
+- [x] create product migration, update model and perhaps create faker too
+- [x] add header to guest layout guest.blade.php (could have also been a component)
+- [x] create dashboard landing page
+- [x] create product/manage page (dashboard)
 
-
+![Dashboard Landing Page](/dash-landing.jpg)
 
 
 
