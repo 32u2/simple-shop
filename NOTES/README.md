@@ -61,7 +61,7 @@ so there won't be any confusion as to who can access what.
 ### Day 2
 
 - [ ] eloquent queries for ProductController CRUD
-- [ ] finalize home page (product cards / grid)
+- [x] finalize home page (product cards / grid)
 - [ ] finalize single product page
 
 Decision: as role management is out of the scope, the first registered user will be assumed to be admin
