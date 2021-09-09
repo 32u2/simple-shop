@@ -67,8 +67,11 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
+
+        $product = Product::findOrFail($id);
+
         return view('product.single', [
-            'product' => 'single product here... (' . $id . ')',
+            'product' => $product,
         ]);
     }
 

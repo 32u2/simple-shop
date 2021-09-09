@@ -60,9 +60,9 @@ so there won't be any confusion as to who can access what.
 
 ### Day 2
 
-- [ ] eloquent queries for ProductController CRUD
+- [x] eloquent queries for ProductController CRUD
 - [x] finalize home page (product cards / grid)
-- [ ] finalize single product page
+- [x] finalize single product page
 
 Decision: as role management is out of the scope, the first registered user will be assumed to be admin
 and thus allowed to create/update products.
@@ -119,6 +119,7 @@ The end of Phase 3
 ## Off-brief, low hanging fruit
 
 - [ ] show db summary in the admin dash, # of payments, total billing etc..
+- [ ] footer
 
 ## How To
 
