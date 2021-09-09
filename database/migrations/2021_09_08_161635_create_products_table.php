@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             // $table->user_id(); // not required, we are assuming single admin user..
             // $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
+            $table->text('image_path')->nullable();
             $table->text('description')->nullable(); // not required for now
             $table->decimal('price');
         });
@@ -34,3 +35,4 @@ class CreateProductsTable extends Migration
         Schema::dropIfExists('products');
     }
 }
+

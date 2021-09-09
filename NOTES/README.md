@@ -77,7 +77,7 @@ options available:
 - [ ] wire product management page (table)
 - [ ] wire product update page
 
-This would be the end of the PHASE 1. The styling and responsiveness may still be outstanding.
+This would be the end of the Phase 1. The styling and responsiveness may still be outstanding.
 
 ### Day 3
 
@@ -102,7 +102,9 @@ The end of Phase 3
 - [ ] test responsiveness on mobile and tablet sizes
 - [ ] test all pages in Chrome, Opera, Firefox and Edge
 
+## Off-brief, low hanging fruit
 
+- [ ] show db summary in the admin dash, # of payments, total billing etc..
 
 
 

@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 class ProductsController extends Controller
 {
 
+    // use WithPagination; // not used for now
+
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +17,12 @@ class ProductsController extends Controller
      */
     public function index()
     {
+        // $products = Product::get()->paginate(10); // not used for now
+
+        $products = Product::get();
+
         return view('product.cards', [
-            'products' => 'all products here..',
+            'products' => $products,
         ]);
     }
 
