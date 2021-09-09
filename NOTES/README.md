@@ -128,7 +128,7 @@ The end of Phase 3
 ## Off-brief, low hanging fruit
 
 - [ ] show db summary in the admin dash, # of payments, total billing etc..
-- [ ] if a user is logged in as admin, show edit button in the product card already on the landing page (besides accessing edit form it via dashboard)
+- [ ] if a user is logged in as admin, show edit button in the product card already on the landing page (besides accessing edit form via dashboard)
 - [ ] footer
 
 ## How To
