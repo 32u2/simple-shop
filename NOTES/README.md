@@ -106,6 +106,14 @@ The end of Phase 3
 
 - [ ] show db summary in the admin dash, # of payments, total billing etc..
 
+## How To
 
+Run migration and seed 9 products:
+
+```
+php artisan migrate:fresh
+php artisan db:seed --class=ProductsSeeder
+
+```
 
 
