@@ -84,7 +84,7 @@ This would be the end of the PHASE 1. The styling and responsiveness may still b
 - [ ] get Stripe and mailing provider dev credentials
 - [ ] create 'Thank You' page
 - [ ] create mail controller and markdown mail view for payment confirmation
-- [ ] test payments (hopefully, this should work locally)
+- [ ] test payments (hopefully, this should work locally, if not create ngrok tunnel)
 
 The end of the Phase 2
 
