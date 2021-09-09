@@ -94,11 +94,12 @@ The end of the Phase 2
 - [ ] create mail controller and markdown mail view for payment confirmation #2
 - [ ] test Phase 3 flow
 
-Without yet looking at it in detail, there may be a potential problem with this part of the brief.
+**Without yet looking at it in detail, there may be a potential problem with this part of the brief.
 Unless Stripe allows recurring payment with such a low frequency (5 minutes), the 2nd part of the payment may need
 user interaction. If so, curl, or Guzzle may be inadequate to handle it as we can automate only legit API actions.
 
-User interaction requires browser automation (along the lines of Selenium, or Chrome DP) and is out of the Laravel scope.
+User interaction requires browser automation (along the lines of [Selenium](https://www.selenium.dev/), or [ChromeDP](https://github.com/chromedp/chromedp))
+and is out of the Laravel scope.**
 
 The end of Phase 3
 
