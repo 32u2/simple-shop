@@ -63,6 +63,9 @@ so there won't be any confusion as to who can access what.
 - [x] eloquent queries for ProductController CRUD
 - [x] finalize home page (product cards / grid)
 - [x] finalize single product page
+- [ ] thank you page
+
+**USER ROLES**
 
 Decision: as role management is out of the scope, the first registered user will be assumed to be admin
 and thus allowed to create/update products.
@@ -72,6 +75,13 @@ options available:
 
 1. register customer as a user - this would allow customer login and access to past payments (currently out of the scope)
 2. collect customers' emails in the payments table, together with the payment details (and decide later what to do with it)
+
+**FORMS**
+
+The guest pages are all done in a classic blade way and called by a single controller, never directly from the route (web.php).
+
+Form pages will each have own controller and will be Livewire(d), so that, for example, form validation errors show without
+reloading an entire page.
 
 - [ ] wire product create page form
 - [ ] wire product management page (table)
