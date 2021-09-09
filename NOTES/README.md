@@ -73,33 +73,33 @@ options available:
 1. register customer as a user - this would allow customer login and access to past payments (currently out of the scope)
 2. collect customers' emails in the payments table, together with the payment details (and decide later what to do with it)
 
-[ ] wire product create page form
-[ ] wire product management page (table)
-[ ] wire product update page
+- [ ] wire product create page form
+- [ ] wire product management page (table)
+- [ ] wire product update page
 
 This would be the end of the PHASE 1. The styling and responsiveness may still be outstanding.
 
 ### Day 3
 
-[ ] get Stripe and mailing provider dev credentials
-[ ] create 'Thank You' page
-[ ] create mail controller and markdown mail view for payment confirmation
-[ ] test payments (hopefully, this should work locally)
+- [ ] get Stripe and mailing provider dev credentials
+- [ ] create 'Thank You' page
+- [ ] create mail controller and markdown mail view for payment confirmation
+- [ ] test payments (hopefully, this should work locally)
 
 The end of the Phase 2
 
-[ ] create cron job for the delayed 2nd payment
-[ ] refactor payment confirmation into payment confirmation #1 (deposit)
-[ ] create mail controller and markdown mail view for payment confirmation #2
-[ ] test Phase 3 flow
+- [ ] create cron job for the delayed 2nd payment
+- [ ] refactor payment confirmation into payment confirmation #1 (deposit)
+- [ ] create mail controller and markdown mail view for payment confirmation #2
+- [ ] test Phase 3 flow
 
 The end of Phase 3
 
 ### Day 4
 
-[ ] revisit styling
-[ ] test responsiveness on mobile and tablet sizes
-[ ] test all pages in Chrome, Opera, Firefox and Edge
+- [ ] revisit styling
+- [ ] test responsiveness on mobile and tablet sizes
+- [ ] test all pages in Chrome, Opera, Firefox and Edge
 
 
 
