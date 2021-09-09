@@ -1,7 +1,5 @@
 This folder will contain notes and screenshots.
 
-PRIVATE-NOTES folder is .gitignore(d), but is available on request.
-
 # The stack
 
 The simple choice was [Laravel Jetstream](https://jetstream.laravel.com/2.x/introduction.html) - it comes with
@@ -42,6 +40,8 @@ All these 'replacement' views are available [here](https://github.com/32u2/laraf
 
 # ToDo + on-the-fly decisions
 
+### Day 1 (1/2)
+
 - [x] copy local **.env** file to NOTES folder (it will later contain STRIPE sandbox creds)
 - [x] create Product model
 - [x] create ProductsController
@@ -58,6 +58,48 @@ so there won't be any confusion as to who can access what.
 - [x] create dashboard landing page
 - [x] create product/manage page (dashboard)
 
+### Day 2
+
+- [ ] eloquent queries for ProductController CRUD
+- [ ] create home page (product cards / grid)
+- [ ] create single product page
+
+Decision: as role management is out of the scope, the first registered user will be assumed to be admin
+and thus allowed to create/update products.
+
+Further down the line, when collecting customers' emails prior to the first payment, there will be two
+options available:
+
+1. register customer as a user - this would allow customer login and access to past payments (currently out of the scope)
+2. collect customers' emails in the payments table, together with the payment details (and decide later what to do with it)
+
+[ ] wire product create page form
+[ ] wire product management page (table)
+[ ] wire product update page
+
+This would be the end of the PHASE 1. The styling and responsiveness may still be outstanding.
+
+### Day 3
+
+[ ] get Stripe and mailing provider dev credentials
+[ ] create 'Thank You' page
+[ ] create mail controller and markdown mail view for payment confirmation
+[ ] test payments (hopefully, this should work locally)
+
+The end of the Phase 2
+
+[ ] create cron job for the delayed 2nd payment
+[ ] refactor payment confirmation into payment confirmation #1 (deposit)
+[ ] create mail controller and markdown mail view for payment confirmation #2
+[ ] test Phase 3 flow
+
+The end of Phase 3
+
+### Day 4
+
+[ ] revisit styling
+[ ] test responsiveness on mobile and tablet sizes
+[ ] test all pages in Chrome, Opera, Firefox and Edge
 
 
 

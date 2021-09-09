@@ -26,7 +26,7 @@
 
         <div class="ml-12">
             <div class="mt-2 text-sm text-gray-500">
-                Project brief is available in the GitHub repository. In a nutshell: create rudimentary shop with an on-the-fly user registration, hook it up to Stripe and enable novel payment flow in two installments.
+                Project brief is available in the GitHub repository. In a nutshell: create rudimentary shop with on-the-fly user registration, hook it up to Stripe and enable novel payment flow in two installments.
             </div>
 
             <a href="https://github.com/32u2/simple-shop">
