@@ -106,6 +106,8 @@ one of them (recognized by one of the auxiliary fields) five minutes at the poin
 would depend on keepalive settings on the server (300000ms = 5min, so it just may suffice)- it's a problem similar to
 [long polling](https://help.hcltechsw.com/connections/v65/admin/install/inst_post_nginx.html) in the messaging context.
 
+Also, there is [this](https://stripe.com/docs/charges/placing-a-hold) to explore - (to self) check if two payments can be authorized in one shot.
+
 The end of Phase 3
 
 ### Day 4
