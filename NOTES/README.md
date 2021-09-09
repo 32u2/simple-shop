@@ -94,12 +94,17 @@ The end of the Phase 2
 - [ ] create mail controller and markdown mail view for payment confirmation #2
 - [ ] test Phase 3 flow
 
-**Without yet looking at it in detail, there may be a potential problem with this part of the brief.
+Without yet looking at it in detail, there may be a potential problem with this part of the brief.
 Unless Stripe allows recurring payment with such a low frequency (5 minutes), the 2nd part of the payment may need
 user interaction. If so, curl, or Guzzle may be inadequate to handle it as we can automate only legit API actions.
 
 User interaction requires browser automation (along the lines of [Selenium](https://www.selenium.dev/), or [ChromeDP](https://github.com/chromedp/chromedp))
-and is out of the Laravel scope.**
+and is out of the Laravel scope.
+
+Very interesting problem. There is a tiny possibility of sending two payment instructions at the same time and then delaying
+one of them (recognized by one of the auxiliary fields) five minutes at the point of the Stripe's confirmation callback. This, however,
+would depend on keepalive settings on the server (300000ms = 5min, so it just may suffice)- it's a problem similar to
+[long polling](https://help.hcltechsw.com/connections/v65/admin/install/inst_post_nginx.html) in the messaging context.
 
 The end of Phase 3
 
