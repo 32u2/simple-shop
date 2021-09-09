@@ -1,4 +1,4 @@
-This folder will contain notes and screenshots.
+This folder will contain notes, screenshots and odd dev resources.
 
 # The stack
 
@@ -93,6 +93,12 @@ The end of the Phase 2
 - [ ] refactor payment confirmation into payment confirmation #1 (deposit)
 - [ ] create mail controller and markdown mail view for payment confirmation #2
 - [ ] test Phase 3 flow
+
+Without yet looking at it in detail, there may be a potential problem with this part of the brief.
+Unless Stripe allows recurring payment with such a low frequency (5 minutes), the 2nd part of the payment may need
+user interaction. If so, curl, or Guzzle may be inadequate to handle it as we can automate only legit API actions.
+
+User interaction requires browser automation (along the lines of Selenium, or Chrome DP) and is out of the Laravel scope.
 
 The end of Phase 3
 
