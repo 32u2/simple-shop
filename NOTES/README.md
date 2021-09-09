@@ -81,6 +81,7 @@ This would be the end of the PHASE 1. The styling and responsiveness may still b
 
 ### Day 3
 
+- [ ] create payments controller, table, model and migration
 - [ ] get Stripe and mailing provider dev credentials
 - [ ] create 'Thank You' page
 - [ ] create mail controller and markdown mail view for payment confirmation
