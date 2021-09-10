@@ -8,8 +8,6 @@ use Illuminate\Http\Request;
 class ProductsController extends Controller
 {
 
-    // use WithPagination; // not used for now
-
     /**
      * Display a listing of the resource.
      *

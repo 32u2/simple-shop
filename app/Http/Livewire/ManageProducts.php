@@ -5,27 +5,20 @@ namespace App\Http\Livewire;
 use App\Models\Product;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ManageProducts extends Component
 {
 
-    public $products;
-    /**
-      * - any public vars, or collections ($products above) in this class are accessible in the template
-      * - any method in this controller can be called directly from the template
-      * - should any method change the public variable, the front will instantly update without page reload
-      * - the best of all, all updates are plain html (not JSON), so fully SEO friendly
-      * - livewire offers illusion of the SPA, without its SEO pitfalls
-    */
-
+    use WithPagination;
 
     public function render()
     {
 
-        $this->products = Product::get();
+        $products = Product::paginate(8);
 
         return view('livewire.manage-products', [
-            'products' => $this->products,
+            'products' => $products,
         ]);
     }
 

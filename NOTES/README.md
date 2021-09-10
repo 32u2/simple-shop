@@ -83,7 +83,7 @@ Form pages will each have own controller and will be Livewire(d), so that, for e
 reloading an entire page.
 
 - [ ] wire product create page form
-- [ ] wire product management page (table)
+- [x] wire product management page (table)
 - [ ] wire product update page
 
 This would be the end of the Phase 1. The styling and responsiveness may still be outstanding.
