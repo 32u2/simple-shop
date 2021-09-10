@@ -23,10 +23,11 @@
                             <td class="border px-8 py-4 text-left">{{ $p->name }}</td>
                             <td class="border px-8 py-4 text-right">{{ number_format($p->price, 2, '.', ',') }}</td>
                             <td class="border px-8 py-4 text-center">
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 currencyLabel">
+                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 cursor-pointer">
                                 Update
                             </span>
-                            <span class="inline-block bg-red-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 currencyLabel">
+                            <span class="inline-block bg-red-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 cursor-pointer"
+                                wire:click="destroy({{ $p->id }})">
                                 Delete
                             </span>
                             </td>
