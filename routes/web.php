@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
+use App\Http\Livewire\ManageProducts;
+use App\Http\Livewire\UpdateProduct;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +27,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::group(['middleware' => ['auth:sanctum', 'verified',]], function () {
 
-    Route::get('/products', [ProductsController::class, 'showTable'])->name('products');
+    // normal
     Route::get('/product/create', [ProductsController::class, 'create'])->name('create-product');
-    Route::get('/product/update/{id}', [ProductsController::class, 'edit'])->name('update-product');
     Route::get('/product/delete/{id}', [ProductsController::class, 'destroy'])->name('delete-product');
+
+    // live
+    Route::get('/products', ManageProducts::class)->name('products');
+    Route::get('/product/update/{id}', UpdateProduct::class)->name('update-product');
 
 });
 

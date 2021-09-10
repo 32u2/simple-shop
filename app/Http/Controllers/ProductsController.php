@@ -27,18 +27,6 @@ class ProductsController extends Controller
     }
 
     /**
-     * Display products table - AUTH required.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showTable()
-    {
-        return view('product.manage', [
-            'products' => 'all products in the table here..',
-        ]);
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
