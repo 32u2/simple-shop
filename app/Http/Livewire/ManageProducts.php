@@ -2,12 +2,19 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Product;
+
 use Livewire\Component;
 
 class ManageProducts extends Component
 {
     public function render()
     {
-        return view('livewire.manage-products');
+
+        $products = Product::get();
+
+        return view('livewire.manage-products', [
+            'products' => $products,
+        ]);
     }
 }

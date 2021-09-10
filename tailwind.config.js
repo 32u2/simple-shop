@@ -21,4 +21,10 @@ module.exports = {
         require('@tailwindcss/forms'),
         require('@tailwindcss/typography')
     ],
+
+    variants: {
+        extend: {
+            tableLayout: ['hover', 'focus'],
+        }
+      }
 };
