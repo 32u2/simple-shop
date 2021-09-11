@@ -4,7 +4,8 @@ This folder will contain notes, screenshots and odd dev resources.
 
 The simple choice was [Laravel Jetstream](https://jetstream.laravel.com/2.x/introduction.html) - it comes with
 Fortify for authentication, with the advantage of catering for both Laravel auth as per the brief, or for
-"headless" (jwt) auth fit for the mobile app, SPA, or exposed API.
+"headless" (jwt) auth fit for the mobile app, SPA, or exposed API. The alternative was Cartalyst's Sentinel, or
+somewhat older Sentry.
 
 # Dev manners
 
@@ -103,19 +104,7 @@ The end of the Phase 2
 - [ ] create mail controller and markdown mail view for payment confirmation #2
 - [ ] test Phase 3 flow
 
-Without yet looking at it in detail, there may be a potential problem with this part of the brief.
-Unless Stripe allows recurring payment with such a low frequency (5 minutes), the 2nd part of the payment may need
-user interaction. If so, curl, or Guzzle may be inadequate to handle it as we can automate only legit API actions.
-
-User interaction requires browser automation (along the lines of [Selenium](https://www.selenium.dev/), or [ChromeDP](https://github.com/chromedp/chromedp)).
-
-Very interesting problem. There is a tiny possibility of sending two payment instructions at the same time and then delaying
-one of them (recognized by one of the auxiliary fields) five minutes at the point of the Stripe's confirmation callback. This, however,
-would depend on keepalive settings on the server (300000ms = 5min, so it just may suffice)- it's a problem similar to
-[long polling](https://help.hcltechsw.com/connections/v65/admin/install/inst_post_nginx.html) in the messaging context.
-
-Also, there is [this](https://stripe.com/docs/charges/placing-a-hold) to explore - (to self) check if two payments can be authorized in one shot,
-also card 'tokenization'.
+- (note to self) check if two payments can be authorized in one shot, also card 'tokenization'
 
 The end of Phase 3
 
