@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\CropImageController;
 use App\Http\Livewire\ManageProducts;
 use App\Http\Livewire\UpdateProduct;
 
@@ -29,11 +30,10 @@ Route::group(['middleware' => ['auth:sanctum', 'verified',]], function () {
 
     // normal
     Route::get('/product/create', [ProductsController::class, 'create'])->name('create-product');
-    Route::get('/product/delete/{id}', [ProductsController::class, 'destroy'])->name('delete-product');
+    // Route::get('/product/delete/{id}', [ProductsController::class, 'destroy'])->name('delete-product');
 
     // live
     Route::get('/products', ManageProducts::class)->name('products');
     Route::get('/product/update/{id}', UpdateProduct::class)->name('update-product');
 
 });
-

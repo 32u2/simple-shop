@@ -38,9 +38,15 @@
                     </tbody>
                 </table>
 
+                {{-- workaround - when last item on the page is live-deleted, navigate to previous page. --}}
+
                 @if ($products->isEmpty())
-                    <h3 class="px-8 py-6">Welcome to simple-shop app.</h3>
-                    <h3 class="px-8 pb-12">Create your first product and good luck with sales!</h3>
+                    @if ($products->currentPage() > 1)
+                       <script>window.history.back();</script>
+                    @else
+                        <h3 class="px-8 py-6">Welcome to simple-shop app.</h3>
+                        <h3 class="px-8 pb-12">Create your first product and good luck with sales!</h3>
+                    @endif
                 @else
                     <div class="px-8 py-6">{{ $products->links() }}</div>
                 @endif

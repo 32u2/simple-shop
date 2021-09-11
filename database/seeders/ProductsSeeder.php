@@ -48,7 +48,7 @@ class ProductsSeeder extends Seeder
                 "description" => "You will never again wonder where did it leave.",
                 "price" => "15999.99"],
             [
-                "name" => "Organic Wand",
+                "name" => "Organic Wand - FREE",
                 "description" => "That's right - just wave it and stick our green sticker over it.",
                 "price" => "0.00"]
         ]);

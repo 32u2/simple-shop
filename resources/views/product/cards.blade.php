@@ -9,8 +9,7 @@
                     <a href="{{ route('single-product', $p->id) }}">
                         <div class="p-4 w-80">
                             <div class="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg">
-                                <img class="w-full" src="{{env('APP_URL').'/img/no-image-available.png'}}"
-                                    alt="Sunset in the mountains">
+                                <img class="w-full" src="{{ $p->image_path }}" alt="{{ $p->name }} image">
                                 <div class="px-6 py-4">
                                     <div class="font-bold text-lg mb-2">{{$p->name}}</div>
                                     <p class="text-gray-700 text-sm">{{$p->description}}</p>
@@ -28,6 +27,9 @@
                 </div>
 
             </div>
+
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 center">
+</div>
         </div>
     </div>
 
