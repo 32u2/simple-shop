@@ -43,7 +43,6 @@
                         if (doDelete) {
                             Livewire.emit('deleteProduct', id);
                         }
-                        // wire:click="destroy({{ $p->id }})
                     }
 
                 </script>
