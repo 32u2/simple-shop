@@ -75,7 +75,7 @@
                     <div class="img-container">
                         <div class="row">
                             <div class="col-md-8">
-                                <img id="image" src="">
+                                <img id="image" src="/img/no-image-available.png">
                             </div>
                             <div class="col-md-4">
                                 <div class="preview"></div>
