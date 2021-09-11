@@ -104,7 +104,6 @@ The end of the Phase 2
 - [ ] create mail controller and markdown mail view for payment confirmation #2
 - [ ] test Phase 3 flow
 
-- (note to self) check if two payments can be authorized in one shot, also card 'tokenization'
 
 The end of Phase 3
 
