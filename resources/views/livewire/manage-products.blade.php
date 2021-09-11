@@ -29,7 +29,7 @@
                                 </span>
                             </a>
                             <span class="inline-block bg-red-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 cursor-pointer"
-                                wire:click="destroy({{ $p->id }})">
+                                onclick="deleteProduct({{$p->id}},'{{ $p->name }}')">
                                 Delete
                             </span>
                             </td>
@@ -37,6 +37,18 @@
                         @endforeach
                     </tbody>
                 </table>
+                <script>
+                    function deleteProduct(id, name) {
+                        doDelete = confirm('Delete ' + name + '?');
+                        if (doDelete) {
+                            Livewire.emit('deleteProduct', id);
+                        }
+                        // wire:click="destroy({{ $p->id }})
+                    }
+
+                </script>
+
+
 
                 {{-- workaround - when last item on the page is live-deleted, navigate to previous page. --}}
 
@@ -53,4 +65,11 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
 </div>

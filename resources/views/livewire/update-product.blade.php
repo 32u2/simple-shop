@@ -46,7 +46,7 @@
                 </div>
                 <div class="py-8 flex-auto">
                     <div class="mt-0 md:mt-8 max-w-none md:max-w-xs md:float-right">
-                        <img  class="w-full cursor-pointer" src="{{ $photo }}" alt="Sunset in the mountains" onclick="$('#selectImage').click();">
+                        <img  class="w-full cursor-pointer rounded-lg" src="{{ $photo }}" alt="Sunset in the mountains" onclick="$('#selectImage').click();">
                         <span class="mt-2">click on the image to replace it</span>
                         <input type="file" name="image" id="selectImage" class="opacity-0">
 
