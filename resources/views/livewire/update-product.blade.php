@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-12 select-none">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-1 md:px-8 text-gray-600">
             <div class="flex flex-wrap flex-center">
@@ -139,10 +139,10 @@
                 reader.readAsDataURL(blob);
                 reader.onloadend = function () {
                     var base64data = reader.result;
+                    // don't bother with ajax, here's the Livewire
                     Livewire.emit('imageUploaded', base64data);
                     $modal.modal('hide');
 
-                    // don't bother with ajax, here's the Livewire
                     // $.support.cors = true
                     // $.ajax({
                     //     type: "POST",
