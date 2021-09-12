@@ -1233,6 +1233,15 @@ select {
 .mt-0 {
 	margin-top: 0px;
 }
+.mb-8 {
+	margin-bottom: 2rem;
+}
+.mb-12 {
+	margin-bottom: 3rem;
+}
+.mb-10 {
+	margin-bottom: 2.5rem;
+}
 .block {
 	display: block;
 }

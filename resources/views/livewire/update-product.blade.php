@@ -35,7 +35,7 @@
                                 </label>
                                 <label class="block">
                                     <span class="text-gray-700">Product description</span>
-                                    <textarea wire:model="description" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" rows="3"></textarea>
+                                    <textarea wire:model="description" maxlength="120" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" rows="3"></textarea>
                                     @error('description') <span class="text-red-600">Description is required.</span> @enderror
                                 </label>
                                 <button type="submit" class="bg-green-600 text-gray-100 text-bold text-xl py-2 rounded-full">Update</button>

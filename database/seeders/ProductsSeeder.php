@@ -32,8 +32,8 @@ class ProductsSeeder extends Seeder
                 "description" => "Just pay, then open a ticket and we may tell you how it works.'",
                 "price" => "10000.00"],
             [
-                "name" => "Trivia Shop Special!",
-                "description" => "This lucky packet reveals how plug in USB stick in less than three attempts.",
+                "name" => "Trivia Shop Special",
+                "description" => "This lucky packet reveals how to plug in USB stick in less than three attempts.",
                 "price" => "29.99"],
             [
                 "name" => "Secret Capture Device",

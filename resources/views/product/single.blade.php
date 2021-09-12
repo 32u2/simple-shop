@@ -30,7 +30,7 @@
             <div class="max-w-md mx-auto my-20 bg-white rounded-xl shadow-md overflow-hidden md:max-w-3xl">
                     <div class="">
                         <div class="p-8">
-                            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold mb-4">
+                            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold mb-6">
                                 Enter your email address to purchase this product.
                                 <br>
                                 No registration needed !
@@ -43,7 +43,7 @@
                                         placeholder="your email address" />
                                         @error('name') <span class="text-red-600">Invalid email address.</span> @enderror
                                 </label>
-                                <button type="submit" class="bg-green-800 text-gray-100 text-bold text-lg float-right px-6 py-2 my-6 rounded-full">Buy {{ $product->name }}</button>
+                                <button type="submit" class="bg-green-800 text-gray-100 text-bold text-lg float-right px-6 py-2 mt-6 mb-10 rounded-full">Buy {{ $product->name }}</button>
                             </div>
                         </form>
 
