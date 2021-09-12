@@ -67,7 +67,7 @@ The guest pages are all done in a classic blade way and called by a single contr
 Form pages will each have own controller and will be Livewire(d), so that, for example, form validation errors show without
 reloading an entire page.
 
-- [ ] wire product create page form
+- [x] ~~wire product create page form~~ we are reusing update form
 - [x] wire product management page (table)
 - [x] wire product update page
 
@@ -75,6 +75,7 @@ This would be the end of the Phase 1. The styling and responsiveness may still b
 
 ### Day 3
 
+- [x] scaffold mail controllers and markdown mail templates
 - [ ] create payments controller, table, model and migration
 - [ ] get Stripe and mailing provider dev credentials
 - [ ] create 'Thank You' page
