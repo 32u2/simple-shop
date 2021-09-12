@@ -15,6 +15,7 @@ class UpdateProduct extends Component
     public $product, $name, $price, $description, $photo;
 
 
+    // we are listening to js call from the front, then fire processImage method - look ma, no ajax
     protected $listeners = ['imageUploaded' => 'processImage'];
 
     public function processImage($data)

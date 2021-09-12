@@ -15,10 +15,14 @@
                                     <p class="text-gray-700 text-sm">{{$p->description}}</p>
                                 </div>
                                 <div class="px-6 py-4">
-                                    <span
-                                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 currencyLabel">
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 currencyLabel">
                                         &#163;{{ number_format($p->price, 2, '.', ',') }}
                                     </span>
+                                    @auth
+                                    <span class="inline-block bg-gray-800 rounded-full w-16 px-3 py-1 text-sm font-semibold text-gray-100 mr-2 float-right text-center">
+                                        Edit
+                                    </span>
+                                    @endauth
                                 </div>
                             </div>
                         </div>

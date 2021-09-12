@@ -16,8 +16,15 @@ class ManageProducts extends Component
 
     public function deleteProduct($id) {
         $product = Product::findOrFail($id);
+        $image_path = $product->image_path;
         $product->delete();
-        // That's it - the table in the front will auto-update without page reload
+        // That's it - the product table in the front will auto-update without page reload
+
+        // Lastly, remove image file, but not the default no-image-available.png
+        $file_fqn = base_path('public/' . $image_path);
+        if (!strpos($file_fqn, 'no-image-available')) {
+            unlink($file_fqn);
+        }
     }
 
     public function render()

@@ -46,9 +46,9 @@
                 </div>
                 <div class="py-8 flex-auto">
                     <div class="mt-0 md:mt-8 max-w-none md:max-w-xs md:float-right">
-                        <img  class="w-full cursor-pointer rounded-lg" src="{{ $photo }}" alt="Sunset in the mountains" onclick="$('#selectImage').click();">
+                        <img  class="w-full cursor-pointer rounded-lg" src="{{ $photo }}" alt="Product image for {{ $name }}" onclick="$('#selectImage').click();">
                         <span class="mt-2">click on the image to replace it</span>
-                        <input type="file" name="image" id="selectImage" class="opacity-0">
+                        <input type="file" accept="image/*" name="image" id="selectImage" class="opacity-0">
 
                     </div>
                 </div>
@@ -65,7 +65,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Product Image
+                    <h5 class="modal-title" id="modalLabel">Product Image for {{ $name }}
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
@@ -97,6 +97,8 @@
         $("body").on("change", "#selectImage", function (e) {
             var files = e.target.files;
             var done = function (url) {
+                // console.log('===========================');
+                // console.log(files);
                 image.src = url;
                 $modal.modal('show');
             };
