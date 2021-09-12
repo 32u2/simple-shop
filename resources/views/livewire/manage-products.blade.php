@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
                 <div class="py-3 pr-2">
-                    <span class="inline-block bg-gray-800 hover:bg-purple-800 text-gray-10 rounded-full w-30 px-3 py-1 text-sm font-semibold text-gray-100 mr-2 float-right text-center cursor-pointer">
+                    <span class="inline-block bg-gray-800 hover:bg-purple-800 text-gray-10 rounded-full w-30 px-3 py-2 text-sm font-semibold text-gray-100 mr-2 float-right text-center cursor-pointer">
                         Create New Product
                     </span>
                     <br>
