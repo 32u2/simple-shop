@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Product;
 
+use Redirect;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -25,6 +26,17 @@ class ManageProducts extends Component
         if (!strpos($file_fqn, 'no-image-available')) {
             unlink($file_fqn);
         }
+    }
+
+    public function newProduct() {
+        $newProduct = Product::create([
+            "name"  => 'New Product',
+            "price"  => 0,
+        ]);
+
+         Redirect::route('update-product', array(
+            'id' => $newProduct->id
+        ));
     }
 
     public function render()
