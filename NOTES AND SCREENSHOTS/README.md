@@ -120,6 +120,7 @@ Stripe testing:
 ```
 Name: Test (not needed, we are using email)
 Number: 4242 4242 4242 4242
+Simulate declined card: 4000 0000 0000 9995
 CSV: 123
 Expiration Month: Any Future Month
 Expiration Year: Any Future Year 

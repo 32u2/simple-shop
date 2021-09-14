@@ -12,12 +12,19 @@ class StripePaymentController extends Controller
 {
     public function index()
     {
-       return view('stripe');
+       return view('stripe'); // not used, incorporated into single page
     }
 
 
     public function process(Request $request)
     {
+        // all received fields:
+        // tokenId: token.id,
+        // amount: amount,
+        // product_id: productID,
+        // email: email,
+
+
   		\Log::info($request->all());
 
         $stripe = Stripe::charges()->create([
