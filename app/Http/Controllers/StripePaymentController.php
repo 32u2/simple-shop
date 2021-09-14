@@ -19,11 +19,12 @@ class StripePaymentController extends Controller
     public function process(Request $request)
     {
         // all received fields:
+        // ====================
+        // token: the entire token (stringified)
         // tokenId: token.id,
         // amount: amount,
         // product_id: productID,
         // email: email,
-
 
   		\Log::info($request->all());
 
@@ -35,7 +36,21 @@ class StripePaymentController extends Controller
             'capture' => true,
         ]);
 
-        return $stripe;
+        // $this->sendMail;
+        return '======' . $stripe;
+
     }
 
+
+    public function sendMail() {
+        // send mail
+
+        try {
+            $data['email'] = 'borisvukaso@gmail.com';
+            \Mail::to($data['email'])->send(new \App\Mail\FirstPayment($data));
+        } catch(Throwable $e) {
+            dd($e->getMessage());
+        }
+
+    }
 }

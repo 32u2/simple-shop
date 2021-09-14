@@ -22,7 +22,9 @@ use App\Http\Controllers\StripePaymentController;
 Route::get('/home', function () {return view('welcome');});
 
 Route::get('/', [ProductsController::class, 'index'])->name('landing'); // landing page - straight to business
-Route::get('/product/{id}', [ProductsController::class, 'show'])->name('single-product'); // maybe sluggify this for SEO, rather than just having id?
+Route::get('/product/{id}', SingleProduct::class)->name('single-product'); // maybe sluggify this for SEO, rather than just having id?
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -41,4 +43,5 @@ Route::group(['middleware' => ['auth:sanctum', 'verified',]], function () {
 // Stripe
 Route::get('stripe', [StripePaymentController::class, 'index']);
 Route::post('payment-process', [StripePaymentController::class, 'process']);
+// Route::post('/product/{id}', [ProductsController::class, 'process']);
 

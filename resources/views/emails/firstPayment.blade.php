@@ -1,12 +1,16 @@
 @component('mail::message')
 # Introduction
 
-The body of your message.
+Thank you very much for your recent purchase.
+({{ $email }})
 
-@component('mail::button', ['url' => ''])
-Button Text
+
+The first payment has been processed and the second transhe of payment will occur within five minutes.
+
+@component('mail::button', ['url' => 'http://127.0.0.1'])
+Shop Some More
 @endcomponent
 
 Thanks,<br>
-{{ config('app.name') }}
+{{ config('app.name') Crew}}
 @endcomponent

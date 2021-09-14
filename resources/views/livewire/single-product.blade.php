@@ -1,6 +1,5 @@
-<x-guest-layout>
-
-    <div class="py-12">
+<div>
+<div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 center">
 
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -88,30 +87,16 @@
                 key: 'pk_test_51JZJFgFtftzX9HhOShq6hWddZf2UKVmcP2Q12ILMDpCQPDkiMYjAsLvPghy5IiSI6uaCkJPrPybY5B4CC9P2DIam00eNKLdwND', // your publisher key id
                 locale: 'auto',
                 token: function (token) {
+                    const data = {
+                        product_id: productID,
+                        amount: amount,
+                        token: token
+                    }
+
+                    Livewire.emit('processPurchase', data);
                     console.log(token);
-                    $.ajax({
-                        url: '{{ url("payment-process") }}',
-                        method: 'post',
-                        data: {
-                            // info we need to setup cron job
-                            token: JSON.stringify(token),
-                            tokenId: token.id,
-                            amount: amount,
-                            product_id: productID,
-                            email: email,
-                        },
-                        success: (response) => {
-                            $('#checkout_form').hide();
-                            $('#thank_you').show();
-                            // console.log(response)
-                        },
-                        error: (error) => {
-                            console.log(error);
-                            $('#checkout_form').hide();
-                            $('#try_again').show();
-                        }
-                    })
                 }
+
             });
 
             handler.open({
@@ -124,5 +109,4 @@
             });
         })
     </script>
-
-</x-guest-layout>
+</div>

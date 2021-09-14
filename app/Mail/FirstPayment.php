@@ -11,21 +11,13 @@ class FirstPayment extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public $email;
+
+    public function __construct($data)
     {
-        //
+        $this->email = $data['email'];
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
         return $this->markdown('emails.firstPayment');
