@@ -48,7 +48,7 @@ so there won't be any confusion as to who can access what.
 - [x] eloquent queries for ProductController CRUD
 - [x] finalize home page (product cards / grid)
 - [x] finalize single product page
-- [ ] thank you page
+- [x] thank you page
 
 **USER ROLES**
 
@@ -80,7 +80,7 @@ This would be the end of the Phase 1. The styling and responsiveness may still b
 - [x] get Stripe and mailing provider dev credentials
 - [x] create 'Thank You' page - slightly off-brief, thank you message replaces checkout and offers "return to the shop"
 - [x] create mail controller and markdown mail view for payment confirmation
-- [x] test payments (hopefully, this should work locally, if not, ~~create ngrok tunnel~~ stripe has its own tunnel & CLI tool)
+- [x] test payments (hopefully, this should work locally, if not, ~~create ngrok tunnel~~ stripe has its own SSH tunnel & CLI tool, added to .gitignore)
 
 The end of the Phase 2
 
@@ -116,4 +116,12 @@ php artisan db:seed --class=ProductsSeeder
 
 ```
 
+Stripe testing:
+```
+Name: Test (not needed, we are using email)
+Number: 4242 4242 4242 4242
+CSV: 123
+Expiration Month: Any Future Month
+Expiration Year: Any Future Year 
+```
 
