@@ -78,7 +78,7 @@ This would be the end of the Phase 1. The styling and responsiveness may still b
 - [x] scaffold mail controllers and markdown mail templates
 - [x] create payments controller, table, model and migration
 - [x] get Stripe and mailing provider dev credentials
-- [x] create 'Thank You' page - slightly off-brief, thank you message replaces checkout and offers "return to the shop"
+- [x] 'Thank You' page - slightly off-brief for smoother UX, thank you section replaces checkout in-place and offers "return to the shop"
 - [x] create mail controller and markdown mail view for payment confirmation
 - [x] test payments (hopefully, this should work locally, if not, ~~create ngrok tunnel~~ stripe has its own SSH tunnel & CLI tool, added to .gitignore)
 
