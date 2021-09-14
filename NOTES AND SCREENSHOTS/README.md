@@ -76,11 +76,11 @@ This would be the end of the Phase 1. The styling and responsiveness may still b
 ### Day 3
 
 - [x] scaffold mail controllers and markdown mail templates
-- [ ] create payments controller, table, model and migration
-- [ ] get Stripe and mailing provider dev credentials
-- [ ] create 'Thank You' page
-- [ ] create mail controller and markdown mail view for payment confirmation
-- [ ] test payments (hopefully, this should work locally, if not, create ngrok tunnel)
+- [x] create payments controller, table, model and migration
+- [x] get Stripe and mailing provider dev credentials
+- [x] create 'Thank You' page - slightly off-brief, thank you message replaces checkout and offers "return to the shop"
+- [x] create mail controller and markdown mail view for payment confirmation
+- [x] test payments (hopefully, this should work locally, if not, ~~create ngrok tunnel~~ stripe has its own tunnel & CLI tool)
 
 The end of the Phase 2
 
