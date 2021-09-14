@@ -27,32 +27,101 @@
             </div>
 
 
-            <div class="max-w-md mx-auto my-20 bg-white rounded-xl shadow-md overflow-hidden md:max-w-3xl">
-                    <div class="">
-                        <div class="p-8">
-                            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold mb-6">
-                                Enter your email address to purchase this product.
-                                <br>
-                                No registration needed !
-                            </div>
-                            <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Email</a>
-                            <form wire:submit.prevent="submit">
-                            <div class="">
-                                <label class="block">
-                                    <input wire:model="name" type="email" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
-                                        placeholder="your email address" />
-                                        @error('name') <span class="text-red-600">Invalid email address.</span> @enderror
-                                </label>
-                                <button type="submit" class="bg-green-800 text-gray-100 text-bold text-lg float-right px-6 py-2 mt-6 mb-10 rounded-full">Buy {{ $product->name }}</button>
-                            </div>
-                        </form>
-
+            <div id="checkout_form">
+                <div class="max-w-md mx-auto my-20 bg-white rounded-xl shadow-md overflow-hidden md:max-w-3xl">
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold mb-6">
+                            Enter your email address to purchase this product.
+                            <br>
+                            No registration needed !
                         </div>
+                        Email
+                        <form wire:submit.prevent="submit">
+                            <label class="block">
+                                <input type="email" name="email" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
+                                placeholder="your email address" />
+                            </label>
+                            <button type="button" id="checkout" class="bg-green-800 hover:bg-green-600 text-gray-100 text-bold text-lg float-right px-6 py-2 mt-6 mb-10 rounded-full">Buy {{ $product->name }}</button>
+                        </form>
                     </div>
                 </div>
+            </div>
 
+            <div id="thank_you" style="display:none">
+                <div class="text-center max-w-md mx-auto my-20 py-16 bg-white rounded-xl shadow-md overflow-hidden md:max-w-3xl">
+                    <h3 class="text-2xl text-center">Thank you for the purchase !</h3>
+                    <a href="{{ route('landing') }}">
+                        <button type="button" class="bg-purple-800 hover:bg-gray-800 text-gray-100 text-bold text-lg px-6 py-2 mt-6 mb-10 rounded-full">Return to the Store</button>
+                    </a>
+                </div>
+            </div>
+
+            <div id="try_again" style="display:none">
+                <div class="text-center max-w-md mx-auto my-20 py-16 bg-white rounded-xl shadow-md overflow-hidden md:max-w-3xl">
+                    <h3 class="text-2xl text-center">Something went wrong !</h3>
+                    <a href="{{ route('single-product', $product->id) }}">
+                        <button type="button" class="bg-purple-800 hover:bg-gray-800 text-gray-100 text-bold text-lg px-6 py-2 mt-6 mb-10 rounded-full">Try Again</button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
-</x-app-layout>
+    <script src="https://checkout.stripe.com/checkout.js"> </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        });
+
+        $('#checkout').click(function () {
+            var amount = {{ $product->price }};
+            var image = 'http://127.0.0.1:8000{{ $product->image_path }}';
+            var productName = '{{ $product->name }}';
+            var productID = '{{ $product->id }}';
+            var email = $.trim($("input[name='email']").val());
+
+            var handler = StripeCheckout.configure({
+                key: 'pk_test_51JZJFgFtftzX9HhOShq6hWddZf2UKVmcP2Q12ILMDpCQPDkiMYjAsLvPghy5IiSI6uaCkJPrPybY5B4CC9P2DIam00eNKLdwND', // your publisher key id
+                locale: 'auto',
+                token: function (token) {
+                    $('#res_token').html(JSON.stringify(token));
+                    $.ajax({
+                        url: '{{ url("payment-process") }}',
+                        method: 'post',
+                        data: {
+                            // info we will need to setup cron job
+                            tokenId: token.id,
+                            amount: amount,
+                            product_id: productID,
+                            email: email,
+                        },
+                        success: (response) => {
+                            $('#checkout_form').hide();
+                            $('#thank_you').show();
+                            console.log(response)
+                        },
+                        error: (error) => {
+                            console.log(error);
+                            $('#checkout_form').hide();
+                            $('#try_again').show();
+                        }
+                    })
+                }
+            });
+
+            handler.open({
+                name: 'Simple Shop',
+                description: productName,
+                amount: amount * 100,
+                email: email,
+                currency: 'gbp',
+                image: image,
+            });
+        })
+    </script>
+
+</x-guest-layout>

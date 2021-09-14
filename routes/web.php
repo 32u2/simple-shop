@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CropImageController;
 use App\Http\Livewire\ManageProducts;
+use App\Http\Livewire\SingleProduct;
 use App\Http\Livewire\UpdateProduct;
+use App\Http\Controllers\StripePaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,10 +32,13 @@ Route::group(['middleware' => ['auth:sanctum', 'verified',]], function () {
 
     // normal
     Route::get('/product/create', [ProductsController::class, 'create'])->name('create-product');
-    // Route::get('/product/delete/{id}', [ProductsController::class, 'destroy'])->name('delete-product');
 
     // live
     Route::get('/products', ManageProducts::class)->name('products');
     Route::get('/product/update/{id}', UpdateProduct::class)->name('update-product');
-
 });
+
+// Stripe
+Route::get('stripe', [StripePaymentController::class, 'index']);
+Route::post('payment-process', [StripePaymentController::class, 'process']);
+

@@ -14,12 +14,14 @@ class CreatePaymentsTable extends Migration
     public function up()
     {
         Schema::create('payments', function (Blueprint $table) {
+
             $table->id();
-            // $table->user_id(); // not required, customers don't need to be registered..
+            $table->string('s_payment_id'); // stripe payment id
+            $table->string('user_id');
+            $table->string('product_id');
+            $table->string('amount');
             $table->timestamps();
-            $table->string('payee_email');
-            $table->text('payment_reference');
-            $table->text('payment_index'); // 1, or 2
+
         });
     }
 
