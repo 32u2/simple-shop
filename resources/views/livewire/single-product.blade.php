@@ -77,7 +77,7 @@
         });
 
         $('#checkout').click(function () {
-            var amount = {{ $product->price }}; // boris - remember to half it for the Phase 3
+            var amount = {{ $product->price * 100 }}; // boris - remember to half it for the Phase 3
             var image = 'http://127.0.0.1:8000{{ $product->image_path }}';
             var productName = '{{ $product->name }}';
             var productID = '{{ $product->id }}';
@@ -102,7 +102,7 @@
             handler.open({
                 name: 'Simple Shop',
                 description: productName,
-                amount: amount * 100,
+                amount: amount,
                 email: email,
                 currency: 'gbp',
                 image: image,

@@ -16,45 +16,47 @@ class SingleProduct extends Component
     public function processPurchase($data) {
         // $data[] object:
         // ===============
-        // "product_id" => "5"
+        // "product_id" => "6"
+        // "amount" => 150
         // "token" => array:9 [▼
-        //   "id" => "tok_1JZW4kFtftzX9HhOZ69VGY24"
-        //   "object" => "token"
-        //   "card" => array:20 [▼
-        //     "id" => "card_1JZW4kFtftzX9HhOABpjS9Sl"
-        //     "object" => "card"
-        //     "address_city" => null
-        //     "address_country" => null
-        //     "address_line1" => null
-        //     "address_line1_check" => null
-        //     "address_line2" => null
-        //     "address_state" => null
-        //     "address_zip" => null
-        //     "address_zip_check" => null
-        //     "brand" => "Visa"
-        //     "country" => "US"
-        //     "cvc_check" => "unchecked"
-        //     "dynamic_last4" => null
-        //     "exp_month" => 11
-        //     "exp_year" => 2022
-        //     "funding" => "credit"
-        //     "last4" => "4242"
-        //     "name" => "borisvukaso@gmail.com"
-        //     "tokenization_method" => null
-        //   ]
-        //   "client_ip" => "197.185.102.181"
-        //   "created" => 1631604546
-        //   "email" => "borisvukaso@gmail.com"
-        //   "livemode" => false
-        //   "type" => "card"
-        //   "used" => false
+        //     "id" => "tok_1JZXg3FtftzX9HhO9HC0y7Eg"
+        //     "object" => "token"
+        //     "card" => array:20 [
+        //         "id" => "card_1JZXg2FtftzX9HhOabreqOmj"
+        //         "object" => "card"
+        //         "address_city" => null
+        //         "address_country" => null
+        //         "address_line1" => null
+        //         "address_line1_check" => null
+        //         "address_line2" => null
+        //         "address_state" => null
+        //         "address_zip" => null
+        //         "address_zip_check" => null
+        //         "brand" => "Visa"
+        //         "country" => "US"
+        //         "cvc_check" => "unchecked"
+        //         "dynamic_last4" => null
+        //         "exp_month" => 11
+        //         "exp_year" => 2022
+        //         "funding" => "credit"
+        //         "last4" => "4242"
+        //         "name" => "borisvukaso@gmail.com"
+        //         "tokenization_method" => null
+        //     ]
+        //     "client_ip" => "197.185.102.181"
+        //     "created" => 1631610703
+        //     "email" => "borisvukaso@gmail.com"
+        //     "livemode" => false
+        //     "type" => "card"
+        //     "used" => false
         // ]
 
         $token = $data['token'];
         $amount = $data['amount'];
         $cardToken = $token['id'];
+        $created = $token['created']; // retrieve UNIX time
 
-        \Log::info($data);
+        // \Log::info($data);
 
 
         // 1st payment also has to be via customer, as per https://stripe.com/docs/saving-cards
@@ -68,8 +70,8 @@ class SingleProduct extends Component
         // dd($customerID); // TESTED OK
 
         // "charge the customer, not the card", card was linked earlier via 'source'
-        $stripe = Stripe::charges()->create([
-            'amount' => $amount * 100,
+        $charge1 = Stripe::charges()->create([
+            'amount' => $amount,
             'currency' => 'gbp',
             'customer' => $customerID,
         ]);
@@ -77,17 +79,22 @@ class SingleProduct extends Component
 
         // ==============================================================================================================
 
-        // 2nd payment - making it immediatelly just to test, but this needs $customerID stored to db + cron job
+        // 2nd payment - making it immediatelly just to test, otherwise this needs $customerID stored to db + cron job
 
-        $knownCustomer = Stripe::customers()->find($customerID); // retrieve entire customer object from stripe
+        // $knownCustomer = Stripe::customers()->find($customerID); // retrieve entire customer object from stripe
+        // $knownCustomerEmail = $knownCustomer['email']; // needed for mail notification
 
-        $knownCustomerEmail = $knownCustomer['email']; // needed for mail notification
+        try {
+            $charge2 = Stripe::charges()->create([
+                'customer' => $customerID,
+                'currency' => 'gbp',
+                'amount'   => $amount,
+            ]);
+        } catch (Cartalyst\Stripe\Exception\MissingParameterException $e) {
+            dd($e);
+        }
 
-        $charge = Stripe::charges()->create([
-            'amount' => $amount * 100,
-            'currency' => 'gbp',
-            'customer' => $knownCustomer,
-        ]);
+        dd('Charge 1 ID: ' . $charge1['id'] . ' - Charge 2 ID: ' . $charge2['id']);
 
     }
 
