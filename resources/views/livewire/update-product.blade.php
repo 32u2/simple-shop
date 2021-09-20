@@ -10,8 +10,8 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-1 md:px-8 text-gray-600">
             <div class="flex flex-wrap flex-center">
                 <div class="py-2 md:py-12 flex-auto">
-                    <h2 class="text-2xl font-bold">{{ $name }}</h2>
-                    <div class="mt-8 max-w-md">
+                    <h2 class="text-2xl ml-4 mt-4 font-bold">{{ $name }}</h2>
+                    <div class="mt-8 md:ml-4 max-w-md">
                         <form wire:submit.prevent="submit">
                             <div class="grid grid-cols-1 gap-6">
                                 <label class="block">
@@ -38,16 +38,16 @@
                                     <textarea wire:model="description" maxlength="120" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" rows="3"></textarea>
                                     @error('description') <span class="text-red-600">Description is required.</span> @enderror
                                 </label>
-                                <button type="submit" class="bg-green-600 text-gray-100 text-bold text-xl py-2 rounded-full">Update</button>
+                                <button type="submit" class="bg-green-600 text-gray-100 text-bold text-xl py-2 mb-4 rounded-full">Update</button>
                             </div>
                         </form>
                     </div>
 
                 </div>
                 <div class="py-8 flex-auto">
-                    <div class="mt-0 md:mt-8 max-w-none md:max-w-xs md:float-right">
-                        <img  class="w-full cursor-pointer rounded-lg" src="{{ $photo }}" alt="Product image for {{ $name }}" onclick="$('#selectImage').click();">
-                        <span class="mt-2">click on the image to replace it</span>
+                    <div class="mt-2 md:mr-4 md:mt-8 max-w-none md:max-w-xs md:float-right">
+                        <img  class="w-full cursor-pointer rounded-lg border-2 border-gray-500" src="{{ $photo }}" alt="Product image for {{ $name }}" onclick="$('#selectImage').click();">
+                        <div class="mt-1 w-full text-gray-500 text-center italic">click on the image to replace it</div>
                         <input type="file" accept="image/*" name="image" id="selectImage" class="opacity-0">
 
                     </div>

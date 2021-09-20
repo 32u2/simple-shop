@@ -5,8 +5,8 @@ use Livewire\Component;
 
 use App\Models\Product;
 use Stripe;
-
-
+use App\Jobs\DoSecondPayment;
+use Carbon;
 class SingleProduct extends Component
 {
     public $product;
@@ -77,24 +77,28 @@ class SingleProduct extends Component
         ]);
 
 
-        // ==============================================================================================================
+        // schedule 2nd payment
 
-        // 2nd payment - making it immediatelly just to test, otherwise this needs $customerID stored to db + cron job
-
+        // this is not needed, we already know the email
         // $knownCustomer = Stripe::customers()->find($customerID); // retrieve entire customer object from stripe
         // $knownCustomerEmail = $knownCustomer['email']; // needed for mail notification
 
-        try {
-            $charge2 = Stripe::charges()->create([
-                'customer' => $customerID,
-                'currency' => 'gbp',
-                'amount'   => $amount,
-            ]);
-        } catch (Cartalyst\Stripe\Exception\MissingParameterException $e) {
-            dd($e);
-        }
+        // try {
+        //     $charge2 = Stripe::charges()->create([
+        //         'customer' => $customerID,
+        //         'currency' => 'gbp',
+        //         'amount'   => $amount,
+        //     ]);
+        // } catch (Cartalyst\Stripe\Exception\MissingParameterException $e) {
+        //     dd($e);
+        // }
 
-        dd('Charge 1 ID: ' . $charge1['id'] . ' - Charge 2 ID: ' . $charge2['id']);
+        //dd('Charge 1 ID: ' . $charge1['id'] . ' - Charge 2 ID: ' . $charge2['id']); // tests OK
+
+        DoSecondPayment::dispatch($customerID, $amount)->delay(now()->addMinutes(5));
+        dispatch($secondPaymentJob);
+
+        // don't forget: php artisan queue:work
 
     }
 
@@ -106,7 +110,7 @@ class SingleProduct extends Component
     {
         return view('livewire.single-product', [
             'product' => $this->product,
-        ]);
+        ])->layout('layouts.guest');
     }
 
     // public function createCheckoutSession() {

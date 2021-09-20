@@ -9,7 +9,7 @@
                     <a href="{{ route('single-product', $p->id) }}">
                         <div class="p-4 w-80">
                             <div class="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg">
-                                <img class="w-full" src="{{ $p->image_path }}" alt="{{ $p->name }} image">
+                                <img class="w-full transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" src="{{ $p->image_path }}" alt="{{ $p->name }} image">
                                 <div class="px-6 py-4 h-28">
                                     <div class="font-bold text-lg mb-2">{{$p->name}}</div>
                                     <p class="text-gray-700 text-sm">{{$p->description}}</p>
