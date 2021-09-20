@@ -84,26 +84,11 @@ This would be the end of the Phase 1. The styling and responsiveness may still b
 
 The end of the Phase 2
 
-- [ ] create cron job for the delayed 2nd payment
+- [x] create job for the delayed 2nd payment
 - [ ] refactor payment confirmation into payment confirmation #1 (deposit)
-- [ ] create mail controller and markdown mail view for payment confirmation #2
+- [x] create mail controller and markdown mail view for payment confirmation #2
 - [x] test Phase 3 flow
 
-
-*CURRENT STATE (Tuesday 14th, noon)*
-
-The API for the Phase 3 is finished and tested in a contrived way - app\Http\Livewire\SingleProduct.php:
-- receives token
-- creates customer
-- charges the 1st payment (from the customer, unlike from the card as in Phase 2)
-- immediately charges the 2nd payment from the same customer
-
-Outstanding:
-- store customerID in the payments table
-- initiate cron job (based on the UNIX timestamp available in the token object)
-- retrieve customerID and effect delayed 2nd payment 
-
-Hindsight: drop [Cartalyst/Stripe](https://cartalyst.com/manual/stripe/2.0#exceptions) library and use Stripe's own.
 
 The end of Phase 3
 
