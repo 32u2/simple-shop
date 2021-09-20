@@ -89,6 +89,7 @@ The end of the Phase 2
 - [x] create mail controller and markdown mail view for payment confirmation #2
 - [x] test Phase 3 flow
 
+(don't forget **php artisan queue:work**)
 
 The end of Phase 3
 
