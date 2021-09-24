@@ -8,12 +8,7 @@
     </div>
 
     <div class="mt-6 text-gray-500">
-        <p>This app is executed using Laravel as part of the mini-hackaton organized by
-            <a href='https://staxogroup.com/' class="font-semibold text-indigo-700">Staxo Group</a>
-            in Sept 2021.</p>
-        <p class="mt-4 mb-4">"Having overseen hundreds of web projects, Staxo understands the challenges, nuances and complexities of delivering
-           a web projectand managing multiple stakeholders, goals, deliverables and deadlines. Over time, we have developed a
-           highly effective, collaborative and transparent approach."</p>
+        <p>This app is executed using Laravel as part of the mini-hackaton organized in Sept 2021.</p>
     </div>
 </div>
 
