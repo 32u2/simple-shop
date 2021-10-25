@@ -6,7 +6,7 @@
 
 So, yes, the short stories, music and poetry embedded into the repo are my thang. Tis postmodern and conceptual, so really nothing to see here.
 
-This particular song is available at my [SoundCloud page](https://soundcloud.com/bbest-o).
+This particular song is also available on my [SoundCloud page](https://soundcloud.com/bbest-o).
 
 Speaking off, if you are still reading this and you happen know anyone who has done a similar thing before, please open an Issue and leave their repo link - I'd really appreciate that.
 
