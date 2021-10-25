@@ -8,5 +8,5 @@ So, yes, the short stories, music and poetry embedded into the repo are my thang
 
 This particular song is also available on my [SoundCloud page](https://soundcloud.com/bbest-o).
 
-Speaking off, if you are still reading this and you happen know anyone who has done a similar thing before, please open an Issue and leave their repo link - I'd really appreciate that.
+Speaking off, if you are still reading this and you happen to know anyone who has done a similar thing before, please open an Issue and leave their repo link - I'd really appreciate that.
 
